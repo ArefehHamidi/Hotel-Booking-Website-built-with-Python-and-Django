@@ -1,0 +1,16 @@
+from django.shortcuts import render
+from property.models import Property , Category
+from agents.models import Agent
+# Create your views here.
+
+def home(request):
+    property_list = Property.objects.all()
+    categoty_list = Category.objects.all()
+    agent_list = Agent.objects.all()
+    template = 'home/home.html'
+    context = {
+        'category_list_home' : categoty_list ,
+        'property_list_home' : property_list ,
+        'agent_list_home' : agent_list ,
+    }
+    return render(request , template , context)
