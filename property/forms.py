@@ -1,0 +1,13 @@
+from django import forms
+from .models import Reserve
+
+
+class ReserveForm(forms.ModelForm):
+    class Meta:
+        model = Reserve
+        fields = '__all__'
+
+# class PropertySearch(form.ModelsForm):
+#     class Meta:
+#         model = Property
+#         # fields = ['address' , 'property_type']
